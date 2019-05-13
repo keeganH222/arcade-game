@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');
 const autoPrefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
@@ -36,14 +35,6 @@ gulp.task('javaScript', () => {
     .pipe(broswerSync.stream());
 });
 
-gulp.task('babel', () => {
-  return gulp.src(['./src/js/**/resources.js', './src/js/**/app.js', './src/js/**/engine.js' ])
-    .pipe(babel({
-        presets: ['@babel/env']
-    }))
-    .pipe(concat('all.min.js'))
-    .pipe(gulp.dest('./testing'));
-})
 gulp.task('copyHtml', () => {
   return gulp.src('./src/**/*.html')
     .pipe(gulp.dest('./dest/'))
