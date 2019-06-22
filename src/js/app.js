@@ -31,7 +31,7 @@ class Enemy {
     this.left = x - 30;
     this.bottom = y + 35;
     this.top = y - 15;
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = 'src/js/images/enemy-bug.png';
     this.counter = level();
   }
 
@@ -65,7 +65,7 @@ class Player {
     this.bugIntervals = 2000;
     this.level = 1;
     this.look = {
-      boy: 'images/char-boy.png',
+      boy: 'src/js/images/char-boy.png',
     };
     this.lives = 3;
   }
@@ -95,7 +95,7 @@ class Player {
       this.speedY = 0;
     }
     for (let i = this.lives; i > 0; i--) {
-      ctx.drawImage(Resources.get('images/Heart.png'), (490 - i * 80), 570);
+      ctx.drawImage(Resources.get('src/js/images/Heart.png'), (490 - i * 80), 570);
     }
     this.drawLevel();
     this.won();
@@ -105,7 +105,7 @@ class Player {
   render() {
     ctx.drawImage(Resources.get(this.look.boy), this.x, this.y);
     for (let i = this.lives; i > 0; i--) {
-      ctx.drawImage(Resources.get('images/Heart.png'), (490 - i * 80), 570);
+      ctx.drawImage(Resources.get('src/js/images/Heart.png'), (490 - i * 80), 570);
     }
     this.drawLive();
     this.drawLevel();
